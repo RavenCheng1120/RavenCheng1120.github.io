@@ -143,6 +143,13 @@ h5, h6          { font-weight: bolder }
         font-size: 1.5em;
     }
 
+    header .profileImage {
+        width: 80%;
+        height: 200px;
+        object-fit: cover;
+        object-position: 50% 30%;
+    }
+
     header nav ul{
         display: block;
         overflow: hidden;
@@ -658,6 +665,10 @@ h5, h6          { font-weight: bolder }
         text-decoration: none;
         color: #969595;
         font-size: 1.5em;
+    }
+
+    header .profileImage {
+        display: none;
     }
 
     header .footer{
