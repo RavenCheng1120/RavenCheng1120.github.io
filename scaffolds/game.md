@@ -2,6 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories:
+categories: "game"
+layout: {{ layout }}
 cover_index:
 ---

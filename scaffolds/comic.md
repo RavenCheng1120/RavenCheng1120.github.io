@@ -2,6 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories:
+categories: "comic"
+layout: {{ layout }}
 cover_index:
 ---
