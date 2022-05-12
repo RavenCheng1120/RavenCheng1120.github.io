@@ -1,3 +1,5 @@
 <li>
     <a href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
+    <br>
+    <p><%- full_date(item.updated, 'YYYY/MMM/Do dddd h:mm a') %></p>
 </li>

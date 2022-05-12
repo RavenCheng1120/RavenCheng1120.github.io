@@ -2,7 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories: "illustation"
+categories: "illustration"
 layout: {{ layout }}
 cover_index:
 ---
