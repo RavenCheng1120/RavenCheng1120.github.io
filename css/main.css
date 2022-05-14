@@ -144,8 +144,9 @@ h5, h6          { font-weight: bolder }
     }
 
     header .profileImage {
-        width: 82%;
-        height: 200px;
+        width: 70%;
+        height: 170px;
+        padding-left: 15px;
         object-fit: cover;
         object-position: 50% 30%;
         margin-top: 1em;
