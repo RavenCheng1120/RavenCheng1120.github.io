@@ -126,7 +126,7 @@ h5, h6          { font-weight: bolder }
     }
 
     header .logo{
-        margin-top: 100px;
+        margin-top: 40px;
     }
 
     header .logo a, header .logo a:active, header .logo a:visited {
@@ -154,13 +154,13 @@ h5, h6          { font-weight: bolder }
     header nav ul{
         display: block;
         overflow: hidden;
-        margin-top: 80px;
+        margin-top: 40px;
         list-style: none;
     }
 
     header nav ul li{
         display: block;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
     }
 
     header nav ul li a{
@@ -177,8 +177,10 @@ h5, h6          { font-weight: bolder }
     }
 
     header .footer{
-        position: absolute;
-        bottom: 50px;
+        /* position: absolute; */
+        /* bottom: 50px; */
+        margin-top: 30px;
+        display: block;
     }
 
     header ul.social{
@@ -190,7 +192,7 @@ h5, h6          { font-weight: bolder }
         display: block;
         float: left;
         position: relative;
-        margin: 0 15px 15px 0;
+        margin: 0 15px 5px 0;
     }
 
 
@@ -305,10 +307,10 @@ h5, h6          { font-weight: bolder }
 /*  Home/portfolio  */
 .main .work{
     display: block;
-    width: 33.33333333333333%;
+    width: 25%;
     /* height: auto;
     max-height: 300px; */
-    height: 350px;
+    height: 300px;
     float: left;
     position: relative;
     overflow: hidden;
@@ -490,6 +492,7 @@ h5, h6          { font-weight: bolder }
 
 .work_nav a.previous.disabled{
     cursor: no-drop;
+    background: none;
 }
 
 .work_nav a.grid{
@@ -502,6 +505,7 @@ h5, h6          { font-weight: bolder }
 
 .work_nav a.next.disabled{
     cursor: no-drop;
+    background: none;
 }
 
 .top .title{
@@ -609,7 +613,8 @@ h5, h6          { font-weight: bolder }
 }
 
 .content ul.archive-list li a:hover{
-    color: #c51818;
+    color: #467f9f;
+    font-weight: bold;
 }
 
 /*  Tooltip  */
@@ -645,6 +650,12 @@ h5, h6          { font-weight: bolder }
 }
 
 /*  Responsive code  */
+@media (max-width:1499px){
+    .main .work{
+       width: 33.33333333333333%;
+   }
+}
+
 @media (max-width:1099px){
 
     header{
@@ -736,6 +747,7 @@ h5, h6          { font-weight: bolder }
 @media (max-width:550px){
      .main .work{
         width: 100%;
+        padding: 5px;
     }
 }
 
