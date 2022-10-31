@@ -1,14 +1,14 @@
 ---
-title: Hexo-Theme-LiveMyLife
+title: Hexo 主題 LiveMyLife 教學
 catalog: true
-date: 2020-04-17 02:34:17
-subtitle: A succinct hexo theme...
-sticky: 999
+date: 2022-10-31 18:57:17
+# subtitle: A succinct hexo theme...
+# sticky: 1
 header-img: /img/header_img/lml_bg.jpg
 tags:
 - Hexo-Theme-LiveMyLife
 categories:
-- Hexo-Theme-LiveMyLife
+- 教學文
 ---
 
 > Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
