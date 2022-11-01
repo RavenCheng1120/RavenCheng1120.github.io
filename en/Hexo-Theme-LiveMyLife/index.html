@@ -55,6 +55,10 @@
     <link rel="stylesheet" href="/css/livemylife.css"/>
 
     
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
 
     
       <!-- top start (article top hot config) -->
@@ -108,10 +112,10 @@
   <link rel="canonical" href="https://ravencheng1120.github.io/en/Hexo-Theme-LiveMyLife/">
   <title>
     
-      Hexo 主題 LiveMyLife 教學 - 渡渡鴉的工程師日誌
+      Hexo 主題 LiveMyLife 教學 - Patty的工程師/插畫家日誌
     
   </title>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -186,7 +190,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Patty&#39;s blog</a>
+      <a class="navbar-brand" href="/">工程師｜插畫家日誌</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -254,10 +258,6 @@
           
 
           <!-- LangSelect -->
-          
-          
-          
-          
           
         </ul>
       </div>
@@ -376,6 +376,22 @@
   </div>
 
   
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
 
 </header>
 
@@ -413,19 +429,19 @@ Gitee Repo: <a target="_blank" rel="noopener" href="https://gitee.com/V_Vincen/h
 <p>I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!</p>
 <p>Let’s begin!!!</p>
 <h3 id="Install-Node-js-and-Git">Install Node.js and Git</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">For Mac</span></span><br><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">For Mac</span></span><br><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Windows: Download &amp; install Node.js. -&gt; <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a></p>
 <p>Windows: Download &amp; install Git. -&gt; <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git</a></p>
 </blockquote>
 <h3 id="Install-Hexo">Install Hexo</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>What is <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo</a>?</p>
 <p>Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other markup languages) and Hexo generates static files with a beautiful theme in seconds.</p>
 </blockquote>
 <h3 id="Setup-your-blog">Setup your blog</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init blog</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>More Commands -&gt; <a target="_blank" rel="noopener" href="https://hexo.io/docs/commands">Hexo Commands</a></p>
 </blockquote>
@@ -510,7 +526,7 @@ Gitee Repo: <a target="_blank" rel="noopener" href="https://gitee.com/V_Vincen/h
 <h3 id="Anchorjs-Settings">Anchorjs Settings</h3>
 <p>And if you want to change the header anchor ‘❡’, you can go to <code>layout/_partial/anchorjs.ejs</code> to change it. How to use anchorjs, see <a target="_blank" rel="noopener" href="https://www.bryanbraun.com/anchorjs/#examples">AnchorJS</a> for detailed examples.</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Anchorjs Settings</span></span><br><span class="line"><span class="attr">anchorjs:</span> <span class="literal">true</span>    <span class="comment"># if you want to customize anchor. check out line:26 of `anchorjs.ejs`</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>(<span class="string">&quot;//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        anchors.options = &#123;</span><br><span class="line">          visible: <span class="string">&#x27;hover&#x27;</span>,</span><br><span class="line">          placement: <span class="string">&#x27;left&#x27;</span>,</span><br><span class="line">          icon: <span class="string">&#x27;❡&#x27;</span></span><br><span class="line">          <span class="comment">// icon: &#x27;ℬ&#x27;</span></span><br><span class="line">        &#125;;</span><br><span class="line">        anchors.add().remove(<span class="string">&#x27;.intro-header h1&#x27;</span>).remove(<span class="string">&#x27;.subheading&#x27;</span>).remove(<span class="string">&#x27;.sidebar-container h5&#x27;</span>);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">async</span>(<span class="string">&quot;//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js&quot;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        anchors.<span class="property">options</span> = &#123;</span><br><span class="line">          <span class="attr">visible</span>: <span class="string">&#x27;hover&#x27;</span>,</span><br><span class="line">          <span class="attr">placement</span>: <span class="string">&#x27;left&#x27;</span>,</span><br><span class="line">          <span class="attr">icon</span>: <span class="string">&#x27;❡&#x27;</span></span><br><span class="line">          <span class="comment">// icon: &#x27;ℬ&#x27;</span></span><br><span class="line">        &#125;;</span><br><span class="line">        anchors.<span class="title function_">add</span>().<span class="title function_">remove</span>(<span class="string">&#x27;.intro-header h1&#x27;</span>).<span class="title function_">remove</span>(<span class="string">&#x27;.subheading&#x27;</span>).<span class="title function_">remove</span>(<span class="string">&#x27;.sidebar-container h5&#x27;</span>);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="Article-Top">Article Top</h3>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># article top</span></span><br><span class="line"><span class="attr">top:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>Hexo-theme-livemylife has added the article top function, just add <code>sticky: number</code> configuration to your markdown notes, articles are sorted by this number.<br>
@@ -568,6 +584,10 @@ Gitee Repo: <a target="_blank" rel="noopener" href="https://gitee.com/V_Vincen/h
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/C++/學習C++static/" data-toggle="tooltip" data-placement="top" title="學習 C++ static">&larr; Previous Post</a>
+          </li>
           
           
         </ul>
@@ -778,10 +798,6 @@ Gitee Repo: <a target="_blank" rel="noopener" href="https://gitee.com/V_Vincen/h
     <!-- Scroll end -->
   
 
-  
-    <!-- LangSelect start -->
-    <script type="text/javascript" src="/js/langselect.js"></script>
-    <!-- LangSelect end -->
   
 
   
