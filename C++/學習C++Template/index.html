@@ -109,10 +109,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://ravencheng1120.github.io/C++/學習C++static/">
+  <link rel="canonical" href="https://ravencheng1120.github.io/C++/學習C++Template/">
   <title>
     
-      學習 C++ static - Patty的工程師/插畫家日誌
+      學習C++Template - Patty的工程師/插畫家日誌
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -308,19 +308,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/Hero.jpg');
-      --intro-header-background-image-url-post: url('static.jpg');
-      --intro-header-background-image-url-page: url('/static.jpg');
+      --intro-header-background-image-url-post: url('template.jpg');
+      --intro-header-background-image-url-page: url('/template.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/Hero.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('static.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/static.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('template.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/template.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('static.jpg'); */
+        /* background-image: url('template.jpg'); */
       
     }
 
@@ -348,11 +348,11 @@
               <a class="tag" href="/tags/#學習" title="學習">學習</a>
               
             </div>
-            <h1>學習 C++ static</h1>
-            <h2 class="subheading"></h2>
+            <h1>學習C++Template</h1>
+            <h2 class="subheading">使用樣板，將資料型態參數化</h2>
             <span class="meta">
               Posted by 鄭筠庭 on
-              2022-11-01
+              2022-11-03
             </span>
 
 
@@ -360,11 +360,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">724</span> In Total
+              Words <span class="post-count">274</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -420,58 +420,29 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++ 的 static 關鍵字</h1>
-<p>Static 出現的位置與定義，分為以下五種</p>
-<ul>
-<li>static 出現在 variable 之前，且該 variable 宣告在某個 function 之中，為區域變數</li>
-<li>static 出現在 variable 之前，且該 variable 並不在 function 中，為全域變數</li>
-<li>static 出現在 function 之前</li>
-<li>static 出現在 class 的 member variable 之前</li>
-<li>static 出現在 class 的 member function 之前</li>
-</ul>
-<h2 id="1-static-位於區域變數之前">1. static 位於區域變數之前</h2>
-<p>如果我們在 function 中某變數之前加上 static，該變數就不會因為 function 結束而消失。作用跟全域變數很像，但不會給其他 cpp 檔案存取到變數，而且建構實例化是在程式執行到 static 那一行才開始。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MyFunction</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">    num++;</span><br><span class="line">    std::cout &lt;&lt; num &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果在 main() 呼叫 MyFunction() 五次，會回傳<br>
-1<br>
-2<br>
-3<br>
-4<br>
-5</p>
-<h2 id="2-static-位於全域變數之前">2. static 位於全域變數之前</h2>
-<p>static 放在全域變數之前，表示該變數無法被其他 cpp 檔用 <code>extern</code> 取用。用意是要讓全域變數只限定在該檔案內，而不是整個程式中， link 的過程中也不會有名字衝突的問題。</p>
-<p>補充一下：<strong>extern</strong>，假如有一個變數要在多個檔案之間共用，extern 可以告訴 compiler 此變數的存在，但是並不是由目前的檔案做宣告。使用方法是<code>extern int a;</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> num = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="3-static-位於-function-之前">3. static 位於 function 之前</h2>
-<p>static 放在函式之前，表示在 cpp 檔裡該函式無法被其他 cpp 檔用 <code>extern</code> 呼叫，跟前面 static 全域變數是差不多的。</p>
-<h2 id="4-static-位於-class-的-member-variable-之前">4. static 位於 class 的 member variable 之前</h2>
-<p>static 的 member variable 是靜態成員變數 (static member variable)，他不屬於任何一個實體 (instance)，代表所有的實體共享該變數。<br>
-最經典的範例就是用來數這個 class 總共生成了多少個 instance。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Entity</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Entity</span>() &#123;</span><br><span class="line">        num++;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Number = &quot;</span> &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Entity::num = <span class="number">0</span>; <span class="comment">// initializing the static int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Entity e1;</span><br><span class="line">    Entity e2;</span><br><span class="line">    Entity e3;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>輸出結果是</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Number</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="attribute">Number</span> <span class="operator">=</span> <span class="number">2</span></span><br><span class="line"><span class="attribute">Number</span> <span class="operator">=</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-static-位於-class-的-member-function-之前">5. static 位於 class 的 member function 之前</h2>
-<p>跟 member variable 的概念相似，這種 function 叫做靜態成員函式 (static member function)，他不屬於任何一個實體 (instance)，代表不需要任何實體就可以呼叫該類別的成員函式。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Entity</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Entity</span>() &#123;</span><br><span class="line">        num++;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Number = &quot;</span> &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">int</span> <span class="title">GetNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Entity::num = <span class="number">0</span>; <span class="comment">// initializing the static int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Call function: &quot;</span> &lt;&lt; Entity::<span class="built_in">GetNum</span>() &lt;&lt; endl;</span><br><span class="line">    Entity e1;</span><br><span class="line">    Entity e2;</span><br><span class="line">    Entity e3;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Call function: &quot;</span> &lt;&lt; Entity::<span class="built_in">GetNum</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>輸出結果是</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Call</span> <span class="function"><span class="keyword">function</span></span>: <span class="number">0</span></span><br><span class="line"><span class="keyword">Number</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">Number</span> = <span class="number">2</span></span><br><span class="line"><span class="keyword">Number</span> = <span class="number">3</span></span><br><span class="line"><span class="keyword">Call</span> <span class="function"><span class="keyword">function</span></span>: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+        <h1>Templates in C++</h1>
+<p>以 template 方式建構 function 或 class 時，可以在執行時或宣告時才定義 data type。</p>
+<p>編譯器透過類似巨集代換的方式，根據樣板內容產生實際的程式碼。參數型態可用關鍵字 class 或 typename 表示泛用型態。</p>
+<h2 id="1-Template-function">1. Template function</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">// or template&lt;class T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">(T value)</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">Print</span>&lt;<span class="type">int</span>&gt;(<span class="number">5</span>); <span class="comment">// or Print(5);</span></span><br><span class="line">  <span class="built_in">Print</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">  <span class="built_in">Print</span>(<span class="number">5.5f</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這樣子就不需要為了不同的參數型態，複製並 overload Print 函式。</p>
+<p>當 Print() 被呼叫後，template 才會存在，所以如果 Print()裡面有錯誤，只要不呼叫，compile 就不會出錯。</p>
+<h2 id="2-Template-class">2. Template class</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CreateArr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T m_arr[N];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">GetSize</span><span class="params">()</span><span class="type">const</span></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; N &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> Nl</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  CreateArr&lt;<span class="type">int</span>, <span class="number">6</span>&gt; myArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以讓資料型態（T）和 array 的大小（N）在 compile 的時候才決定。</p>
 <h3 id="參考資料">參考資料</h3>
-<p><a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-static/">C/C++ static 的 5 種用法</a><br>
-<a target="_blank" rel="noopener" href="https://medium.com/@alan81920/c-c-%E4%B8%AD%E7%9A%84-static-extern-%E7%9A%84%E8%AE%8A%E6%95%B8-9b42d000688f">C/C++ 中的 static, extern 的變數</a><br>
-<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=f7mtWD9GdJ4&amp;list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&amp;index=48&amp;ab_channel=TheCherno">Local Static in C++ - Cherno</a></p>
+<p><a target="_blank" rel="noopener" href="https://husking-studio.com/cpp-template-01/">C++ -Template 的教學小筆記</a><br>
+<a target="_blank" rel="noopener" href="https://www.rocksaying.tw/archives/3641717.html">C++ Template 筆記</a><br>
+<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=I-hZkUa9mIs&amp;list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&amp;index=54&amp;ab_channel=TheCherno">Templates in C++ - Cherno</a></p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/C++/學習C++Template/" data-toggle="tooltip" data-placement="top" title="學習C++Template">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo 主題 LiveMyLife 教學">Next Post &rarr;</a>
+            <a href="/C++/學習C++static/" data-toggle="tooltip" data-placement="top" title="學習 C++ static">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -504,7 +475,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++ 的 static 關鍵字</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-static-%E4%BD%8D%E6%96%BC%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8%E4%B9%8B%E5%89%8D"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. static 位於區域變數之前</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-static-%E4%BD%8D%E6%96%BC%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8%E4%B9%8B%E5%89%8D"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. static 位於全域變數之前</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-static-%E4%BD%8D%E6%96%BC-function-%E4%B9%8B%E5%89%8D"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. static 位於 function 之前</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-static-%E4%BD%8D%E6%96%BC-class-%E7%9A%84-member-variable-%E4%B9%8B%E5%89%8D"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. static 位於 class 的 member variable 之前</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-static-%E4%BD%8D%E6%96%BC-class-%E7%9A%84-member-function-%E4%B9%8B%E5%89%8D"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. static 位於 class 的 member function 之前</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Templates in C++</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Template-function"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Template function</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Template-class"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Template class</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">參考資料</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
