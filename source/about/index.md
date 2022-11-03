@@ -3,7 +3,7 @@ layout: "about"
 title: "About"
 date: 2022-10-31 18:45:00
 description: "人生志願是畫圖畫到老"
-header-img: "img/about/hero_about.jpg"
+header-img: "img/scenery/hero_about.jpg"
 ---
 
 ## 關於我
