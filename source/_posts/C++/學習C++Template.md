@@ -1,5 +1,5 @@
 ---
-title: 學習C++Template
+title: 學習 C++ Template
 catalog: true
 date: 2022-11-03 16:19:33
 subtitle: 使用樣板，將資料型態參數化
@@ -68,7 +68,7 @@ int main(){
 
 
 ### 參考資料
-
+本文內容為以下參考資料的彙整
 [C++ -Template 的教學小筆記](https://husking-studio.com/cpp-template-01/)
 [C++ Template 筆記](https://www.rocksaying.tw/archives/3641717.html)
 [Templates in C++ - Cherno](https://www.youtube.com/watch?v=I-hZkUa9mIs&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=54&ab_channel=TheCherno)
