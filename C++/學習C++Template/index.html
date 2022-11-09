@@ -112,7 +112,7 @@
   <link rel="canonical" href="https://ravencheng1120.github.io/C++/學習C++Template/">
   <title>
     
-      學習C++Template - Patty的工程師/插畫家日誌
+      學習 C++ Template - Patty的工程師/插畫家日誌
     
   </title>
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -348,7 +348,7 @@
               <a class="tag" href="/tags/#學習" title="學習">學習</a>
               
             </div>
-            <h1>學習C++Template</h1>
+            <h1>學習 C++ Template</h1>
             <h2 class="subheading">使用樣板，將資料型態參數化</h2>
             <span class="meta">
               Posted by 鄭筠庭 on
@@ -364,7 +364,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">274</span> In Total
+              Words <span class="post-count">288</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -431,7 +431,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CreateArr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T m_arr[N];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">GetSize</span><span class="params">()</span><span class="type">const</span></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; N &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> Nl</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  CreateArr&lt;<span class="type">int</span>, <span class="number">6</span>&gt; myArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以讓資料型態（T）和 array 的大小（N）在 compile 的時候才決定。</p>
 <h3 id="參考資料">參考資料</h3>
-<p><a target="_blank" rel="noopener" href="https://husking-studio.com/cpp-template-01/">C++ -Template 的教學小筆記</a><br>
+<p>本文內容為以下參考資料的彙整<br>
+<a target="_blank" rel="noopener" href="https://husking-studio.com/cpp-template-01/">C++ -Template 的教學小筆記</a><br>
 <a target="_blank" rel="noopener" href="https://www.rocksaying.tw/archives/3641717.html">C++ Template 筆記</a><br>
 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=I-hZkUa9mIs&amp;list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&amp;index=54&amp;ab_channel=TheCherno">Templates in C++ - Cherno</a></p>
 
@@ -439,6 +440,10 @@
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/C++/學習C++const/" data-toggle="tooltip" data-placement="top" title="學習 C++ const">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
