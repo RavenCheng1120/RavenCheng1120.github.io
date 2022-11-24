@@ -2,7 +2,7 @@
 title: 學習 C++ static
 catalog: true
 date: 2022-11-01 18:56:14
-subtitle:
+subtitle: static 關鍵字
 header-img: static.jpg
 tags:
 - C++
